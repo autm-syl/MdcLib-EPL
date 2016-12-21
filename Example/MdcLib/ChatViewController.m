@@ -149,9 +149,8 @@
                 self.FBIwarningView.text = [NSString stringWithFormat:@"Error :%@",error.localizedDescription];
                 NSLog(@"connectBtnClicked %@", error.localizedDescription);
             } else {
-                self.FBIwarningView.text = [NSString stringWithFormat:@"leave Room %@ success",@"100645" ];
+                self.FBIwarningView.text = [NSString stringWithFormat:@"leave Room %@ success",@"100645"];
                 NSLog(@"connectBtnClicked %@", @"ok");
-                
             }
         });
         

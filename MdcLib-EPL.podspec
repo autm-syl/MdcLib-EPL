@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
 
   s.requires_arc        = true
-  s.source              = { :http => "https://github.com/duplicater/MdcLib/releases/download/#{s.version}/MdcLib-EPL.zip" }
+  s.source              = { :http => "https://github.com/duplicater/MdcLib-EPL/releases/download/#{s.version}/MdcLib-EPL.zip" }
   s.platform            = :ios, '8.0'
   s.preserve_paths      = 'MdcLib.framework'
   s.public_header_files = 'MdcLib.framework/Versions/A/Headers/*'
