@@ -11,7 +11,7 @@
 
 // IMPORTANT!!! replace with your api token from https://mdclib.com/account/
 #define MDCLIB_TOKEN @"c924a224d3a0d199702b48463cc5fea8"
-#define MDCLIB_APPKEY @"d07d73f7a77f850625c88db00e2da64f"
+#define MDCLIB_APPKEY @"bcd77910565d7733aabb15a16d94c2cfa8f9a7d7"
 
 @interface MdcLibAppDelegate () <MdcLibDelegate>
 
@@ -77,6 +77,7 @@
     
     // Set the icon badge to zero on startup (optional)
     [[MdcLib push] resetBadge];
+    
     return YES;
 }
 

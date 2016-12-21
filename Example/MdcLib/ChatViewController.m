@@ -66,32 +66,29 @@
 }
 - (IBAction)connectBtnClicked:(id)sender {
     NSString *roomid = self.roomConnect.text;
-    currentRoomId = roomid;
+    //currentRoomId = roomid;
     
     if ((roomid == nil) || ([roomid isEqualToString:@""])){
         self.FBIwarningView.text = @"Room ID invalid";
     }
     else {
-
-        [[MdcLib sharedInstance] joinRoom:roomid callback:^(NSError * _Nullable error) {
-            //
+        [[MdcLib sharedInstance] joinRoom:roomid callback:^(NSString * _Nullable conversation_id, NSError * _Nullable error) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 //
                 if (error){
                     self.FBIwarningView.text = [NSString stringWithFormat:@"Error :%@",error.localizedDescription];
                     NSLog(@"connectBtnClicked %@", error.localizedDescription);
                 } else {
-                    self.FBIwarningView.text = [NSString stringWithFormat:@"joinRoom %@ success",roomid ];
+                    self.FBIwarningView.text = [NSString stringWithFormat:@"joinRoom %@ success",conversation_id ];
                     NSLog(@"connectBtnClicked %@", @"ok");
+                    currentRoomId = conversation_id;
                 }
             });
-            
         }];
     }
     
-    [self.view endEditing:YES];
     
-}
+    [self.view endEditing:YES];}
 - (IBAction)sendBtnClicked:(id)sender {
     NSDictionary *chatDist = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:self.chatField.text, @"sdfsa123123", @"sdffsdv", @"vxc  54t5", nil] forKeys:[NSArray arrayWithObjects:@"typeComment", @"userAvatar", @"userName", @"valueComment", nil]];
     

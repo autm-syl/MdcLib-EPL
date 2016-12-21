@@ -846,7 +846,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param roomId RoomID
  @param response  if error = nil, join success.
  */
-- (void) joinRoom:(NSString *_Nonnull)roomId callback:(void (^ _Nullable)(NSError *_Nullable error))response;
+- (void) joinRoom:(NSString *_Nonnull)key callback:(void (^ _Nullable)(NSString *_Nullable conversation_id, NSError *_Nullable error))conversation;
 
 
 /**
