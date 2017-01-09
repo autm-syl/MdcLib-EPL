@@ -39,10 +39,10 @@
     [MdcLib sharedInstance].delegate = self;
     
     
-    [[MdcLib sharedInstance] getHistoryConversation:@"100645" limited:20 timestamp:@"1481272710000" callback:^(NSDictionary * _Nullable data) {
-        //
-        NSLog(@"history %@",data);
-    }];
+//    [[MdcLib sharedInstance] getHistoryConversation:@"100645" limited:20 timestamp:@"1481272710000" callback:^(NSDictionary * _Nullable data) {
+//        //
+//        NSLog(@"history %@",data);
+//    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -141,7 +141,7 @@
 
 - (IBAction)leaveRoom:(id)sender {
     
-    [[MdcLib sharedInstance] leaveRoom:@"100645" callback:^(NSError * _Nullable error) {
+    [[MdcLib sharedInstance] leaveRoom:currentRoomId callback:^(NSError * _Nullable error) {
         //
         dispatch_async(dispatch_get_main_queue(), ^{
             //
